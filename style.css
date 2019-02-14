@@ -105,7 +105,8 @@ body {
 
 .input-Array-block {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     margin-top: 30px;
 }
@@ -119,5 +120,19 @@ body {
     color: #fff;
     font-size: 1.5em;
     padding: 0px 10px;
+    outline: none;
+}
+
+
+#sort-btn {
+    margin-top: 30px;
+    border: none;
+    background-color: #F2AE23;
+    min-width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 1.4em;
+    font-family: 'Tahoma', sans-serif;
+    font-weight: bold;
     outline: none;
 }
