@@ -31,6 +31,7 @@ genButt.addEventListener("click", function(){
     // td.style.height = "50px";
         t.appendChild(tr);
         iab[0].appendChild(t);
+        checkVar = 1;
     for(let i = 0; i < inputArraySizeInpt.value; i++){
         var td = document.createElement("td");
         var inpt = document.createElement("input");
@@ -41,8 +42,9 @@ genButt.addEventListener("click", function(){
         td.style.border = "1px solid #fff";
         inpt.classList.add("inptStyle");
         }
+    } else if(checkVar == 1){
+        location.reload();
     }
-   checkVar = 1;
 })
 
 sortBtn.addEventListener("click", function(){
