@@ -39,8 +39,8 @@ sortBtn.addEventListener("click", function(){
         var jsArray = [];
         jsArray.lenght = tdA.length;
         for(let i = 0; i < tdA.length; i++){
-            jsArray[i] = tdA[i].children[0].value;
+            jsArray[i] = +tdA[i].children[0].value;
         };
-        console.log(jsArray);
+        console.log();
     };
 });
