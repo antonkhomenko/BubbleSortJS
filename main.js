@@ -46,7 +46,7 @@ genButt.addEventListener("click", function(){
         location.reload();
     }
 })
-
+var checkVar2 = 0;
 sortBtn.addEventListener("click", function(){
     if(checkVar == 1){
         let tdA = iab[0].querySelectorAll("td");
@@ -62,13 +62,15 @@ sortBtn.addEventListener("click", function(){
                 }
             }
         };
-        for(let i = 0; i < jsArray.length; i++){
-            outputArrayTable.classList.remove("invisible");
-            let td = document.createElement("td");
-            td.innerHTML = jsArray[i];
-            td.classList.add("outputArrayStyle");
-            outputArrayTable.children[0].appendChild(td);
-            
+        if(checkVar2 == 0){
+            for(let i = 0; i < jsArray.length; i++){
+                outputArrayTable.classList.remove("invisible");
+                let td = document.createElement("td");
+                td.innerHTML = jsArray[i];
+                td.classList.add("outputArrayStyle");
+                outputArrayTable.children[0].appendChild(td);
+                checkVar2 = 1;
+            }
         }
     };
 });
