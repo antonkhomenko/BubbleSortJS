@@ -3,6 +3,18 @@ var valueRes = document.getElementById("value-res");
 var genButt = document.getElementById("genButt");
 var iab = document.getElementsByClassName("input-Array-block");
 var sortBtn = document.getElementById("sort-btn");
+var outputArrayTable = document.getElementById("outputArrayTable");
+
+//add swap mehod
+
+Array.prototype.swap = function (x,y) {
+    var b = this[x];
+    this[x] = this[y];
+    this[y] = b;
+    return this;
+  }
+//****************/
+
 valueRes.textContent = inputArraySizeInpt.value;
 
 inputArraySizeInpt.addEventListener("input", function(){
@@ -41,6 +53,20 @@ sortBtn.addEventListener("click", function(){
         for(let i = 0; i < tdA.length; i++){
             jsArray[i] = +tdA[i].children[0].value;
         };
-        console.log();
+        for(let i = 0; i < jsArray.length; i++){
+            for(let j = 0; j  < jsArray.length - i - 1; j++){
+                if(jsArray[j] > jsArray[j + 1]){
+                    jsArray.swap(j, j + 1);
+                }
+            }
+        };
+        for(let i = 0; i < jsArray.length; i++){
+            outputArrayTable.classList.remove("invisible");
+            let td = document.createElement("td");
+            td.innerHTML = jsArray[i];
+            td.classList.add("outputArrayStyle");
+            outputArrayTable.children[0].appendChild(td);
+            
+        }
     };
 });
